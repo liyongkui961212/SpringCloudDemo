@@ -1,0 +1,21 @@
+server:
+  port: 28081
+
+spring:
+  application:
+    name: payment-consol-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/payment?useSSL=true&serverTimezone=UTC&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    generate-ddl: true
+    show-sql: true
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+      host: localhost
+      port: 8500

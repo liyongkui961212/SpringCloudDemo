@@ -1,0 +1,16 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/liyongkui961212/demo-config
+          search-paths: demo-config
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
